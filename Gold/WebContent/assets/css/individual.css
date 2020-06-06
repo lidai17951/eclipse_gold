@@ -1,0 +1,266 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    font: 12px/1.5 Microsoft YaHei,tahoma,\\5B8B\4F53,sans-serif;
+    color: #717171;
+    font-size: 12px;
+    font-family: MicrosoftYaHei;
+}
+form {
+    padding: 0;
+    margin: 0;
+}
+input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-size: 100%;
+}
+ol,ul {
+    list-style: none;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+.content-wrap {
+    overflow: hidden;
+    width: 980px;
+    height: 100%;
+    margin: 10px auto 100px;
+    border: 1px solid #e1e2e5;
+    box-shadow: 0 2px 4px rgba(0,0,0,.14);
+    background: #fafafa;
+    border-radius: 4px;
+}
+.content-left {
+    float: left;
+    width: 150px;
+    height: 100%;
+    overflow: hidden;
+}
+.content-left-title {
+    display: block;
+    width: 150px;
+    height: 66px;
+    text-align: center;
+    line-height: 66px;
+    font-size: 16px;
+    color: #99a2aa;
+    cursor: default;
+    border-bottom: 1px solid #e1e2e5;
+}
+.content-left ul {
+    border-bottom: 1px solid #e1e2e5;
+}
+.content-left ul li {
+    text-align: center;
+    width: 150px;
+    height: 66px;
+    line-height: 66px;
+}
+.content-left-name {
+    margin-left: 12px;
+    font-size: 14px;
+    color: #222;
+}
+
+.content-left ul li:hover {
+    background-color: rgba(225, 228, 234,1);
+    cursor: pointer;
+}
+
+.content-right {
+    float: left;
+    width: 829px;
+    border-left: 1px solid #ddd;
+    background: #fff;
+    min-height: 890px!important;
+}
+.content-right-title {
+    height: 66px;
+    padding-left: 30px;
+    border-bottom: 1px solid #ddd;
+}
+.content-right-title-icon {
+    float: left;
+    width: 4px;
+    height: 16px;
+    margin-top: 18px;
+    background-color: #00a1d6;
+    border-radius: 4px;
+}
+.content-right-title-text {
+    float: left;
+    margin: 15px 0 0 5px;
+    color: #00a1d6;
+    font-size: 14px;
+    cursor: default;
+}
+.content-right .user-setting-wrap {
+    padding: 20px 20px 0;
+    position: relative;
+}
+.el-form-item {
+    margin-bottom: 22px;
+}
+
+.user-name, .user-id ,.user-my-sign, .user-my-sex,.user-my-btn{ /*form表单下的组件*/
+    float: left;
+    width: 789px;
+}
+.el-form-item__label {
+    width: 95px;
+    text-align: right;
+    margin-right: 20px;
+    float: left;
+    line-height: 30px;
+    padding: 0;
+}
+.el-form-item__label {
+    text-align: right;
+    vertical-align: middle;
+    float: left;
+    font-size: 14px;
+    color: #48576a;
+    line-height: 1;
+    padding: 11px 12px 11px 0;
+    box-sizing: border-box;
+}
+.el-form-item__content {
+    position: relative;
+    line-height: 30px;
+    font-size: 16px;
+}
+.user-name .el-input, .user-name .el-input__inner {
+    float: left;
+    width: 225px;
+    height: 30px;
+    margin-right: 40px;
+}
+.user-name-not { /*注：修改一次昵称需要消耗6点积分*/
+    color: #aaa;
+}
+
+.user-my-sign .el-textarea, .user-my-sign .el-textarea .el-textarea__inner {
+    float: left;
+    width: 618px;
+    height: 88px;
+    resize: none;
+}
+
+.el-radio-group {
+    display: inline-block;
+    font-size: 0;
+}
+
+ .el-radio-button__inner, .el-radio-group, .el-radio__input {
+     line-height: 1;
+     vertical-align: middle;
+ }
+.el-radio-button, .el-radio-button__inner {
+    position: relative;
+    display: inline-block;
+}
+.el-radio-button__orig-radio {
+    opacity: 0;
+    outline: 0;
+    position: absolute;
+    z-index: -1;
+    left: -999px;
+}
+.el-radio-button:first-child .el-radio-button__inner {
+    border-left: 1px solid #bfcbd9;
+    border-radius: 4px 0 0 4px;
+    box-shadow: none!important;
+}
+.user-my-sex .el-radio-button__inner {
+    margin-right: 20px;
+    padding: 5px 8px;
+    border: 1px solid #bfcbd9;
+    border-radius: 5px!important;
+    background: #f4f4f4;
+    color: #717171;
+}
+.el-radio-button__inner {
+    white-space: nowrap;
+    background: #fff;
+    border: 1px solid #bfcbd9;
+    border-left: 0;
+    color: #1f2d3d;
+    -webkit-appearance: none;
+    text-align: center;
+    box-sizing: border-box;
+    outline: 0;
+    margin: 0;
+    cursor: pointer;
+    transition: all .3s cubic-bezier(.645,.045,.355,1);
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 0;
+}
+.el-radio-button, .el-radio-button__inner {
+    position: relative;
+    display: inline-block;
+}
+.el-radio-button__inner, .el-radio-group, .el-radio__input {
+    line-height: 1;
+    vertical-align: middle;
+}
+
+ .is-active  .el-radio-button__inner{
+     color: #fff;
+     background-color: #20a0ff;
+     border-color: #20a0ff;
+     box-shadow: -1px 0 0 0 #20a0ff;
+ }
+.user-setting-wrap  .padding-dom{
+    width: 789px;
+    height: 39px;
+    border-bottom: 1px solid #e5e9ef;
+    margin-bottom: 40px;
+}
+.user-my-btn-warp {
+    float: left;
+    width: 789px;
+    height: 36px;
+    position: relative;
+}
+.user-my-btn .el-button--primary {
+    width: 110px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #00a1d6!important;
+}
+.el-button--primary {
+    color: #fff;
+    background-color: #20a0ff;
+    border-color: #20a0ff;
+}
+.el-button {
+    display: inline-block;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    border: 1px solid #c4c4c4;
+    margin: 0;
+    padding: 10px 15px;
+    border-radius: 4px;
+}
+.el-button {
+    font-size: 14px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+ .el-button:hover {
+   opacity: 0.8;
+ }
+
+ .checked {
+     background: rgba(32, 160, 255,1)!important;
+ }

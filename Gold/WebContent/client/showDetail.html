@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 引入font-awesome -->
+    <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/showDetail.css">
+    <script src="../assets/js/flexible.js" ></script>
+    <script src="../assets/js/echarts.min.js" ></script>
+    <script src="../assets/js/showDetail.js" async></script>
+    <script type="text/javascript" src="../assets/js/jquery-3.4.1.min.js"></script>
+    <script src="../assets/js/classTool.js"></script>
+
+    <script>
+        window.onload=function () {
+            showTime();
+            $("#calculator").on("click",function () {
+                $('.top-nav').toggleClass('top-nav-o');
+            });
+
+            var leftA =document.querySelectorAll(".left-blowup,.right-blowup");//所有缩放按钮
+            for (i=0;i<leftA.length;i++){
+                leftA[i].onclick=function () {
+                    var panel = this.parentNode;
+                    $(panel).toggleClass('blow-left-panel');
+                };
+            }
+        };
+
+
+
+        function showTime() {
+            clearTimeout(t);//清除定时器
+            var dt = new Date();
+            var y = dt.getFullYear();
+            var mt = dt.getMonth() + 1;
+            var day = dt.getDate();
+            var h = dt.getHours();//获取时
+            var m = dt.getMinutes();//获取分
+            var s = dt.getSeconds();//获取秒
+            document.querySelector(".showTime").innerHTML = '北京时间：' + y + "年" + mt + "月" + day + "-" + h + "时" + m + "分" + s + "秒";
+            var  t = setTimeout(showTime, 1000); //设定定时器，循环运行
+        }
+
+    </script>
+</head>
+<body>
+<div class="top-nav ">
+    <div class="main-box">
+        <div class="main-box-content">
+            <h3><span class="">买外币</span>
+                <span  class="unchecked">卖外币</span>
+                <span  class="unchecked">中间价</span>
+            </h3>
+            <form id="buy_wb" style="">
+                <div class="form-column" style="margin-bottom: 10px;" >
+                    <span>我想换&emsp;</span>
+                    <input type="text" value="100">
+                    <select>
+                        <option value="USD">美元</option>
+                        <option value="CNY">人民币</option>
+                        <option value="GBP">英镑</option>
+                        <option value="EUR">欧元</option>
+                    </select>
+                    <span>需要用&emsp;</span>
+                    <input type="text" value="710.4700" readonly="true">
+                    <select>
+                        <option value="CNY">人民币</option>
+                        <option value="USD">美元</option>
+                        <option value="GBP">英镑</option>
+                        <option value="EUR">欧元</option>
+                    </select>
+                </div>
+                <div class="form-column" style="margin-bottom: 10px;" >
+                    <span>我持有&emsp;</span>
+                    <input type="text">
+                    <select>
+                        <option value="CNY">人民币</option>
+                        <option value="USD">美元</option>
+                        <option value="GBP">英镑</option>
+                        <option value="EUR">欧元</option>
+                    </select>
+                    <span>能兑换&emsp;</span>
+                    <input type="text" readonly="true">
+                    <select>
+                        <option value="USD">美元</option>
+                        <option value="CNY">人民币</option>
+                        <option value="GBP">英镑</option>
+                        <option value="EUR">欧元</option>
+                    </select>
+                </div>
+                <div class="form-column" style="margin-bottom: 10px;">
+                    <span>当前汇率&emsp;</span>
+                    <input type="text" style="width: 134px" readonly="true">
+                    <span>选择银行&emsp;</span>
+                    <select style="width: 134px">
+                        <option value="USD">中国银行</option>
+                        <option value="CNY">工商银行</option>
+                        <option value="GBP">建设银行</option>
+                        <option value="EUR">农业银行</option>
+                        <option value="EUR">交通银行</option>
+                        <option value="EUR">招商银行</option>
+                    </select>
+                </div>
+                <div class="form-column" >
+                    <input class="form_submit" type="button" value="开始计算">
+                    <input class="form_reset" type="reset" value="结果重置">
+                </div>
+
+            </form>
+            <form id="sell_wb" style="display: none">
+                <div class="form-column" style="margin-bottom: 10px;" >
+                    <span>我有纸币&emsp;</span>
+                    <input type="text" value="100">
+                    <select>
+                        <option value="USD">美元</option>
+                        <option value="CNY">人民币</option>
+                        <option value="GBP">英镑</option>
+                        <option value="EUR">欧元</option>
+                    </select>
+                    <span>能兑换&emsp;</span>
+                    <input type="text" value="710.4700" readonly="true">
+                    <select>
+                        <option value="CNY">人民币</option>
+                        <option value="USD">美元</option>
+                        <option value="GBP">英镑</option>
+                        <option value="EUR">欧元</option>
+                    </select>
+                </div>
+                <div class="form-column" style="margin-bottom: 10px;" >
+                    <span>我有存款&emsp;</span>
+                    <input type="text">
+                    <select>
+                        <option value="CNY">人民币</option>
+                        <option value="USD">美元</option>
+                        <option value="GBP">英镑</option>
+                        <option value="EUR">欧元</option>
+                    </select>
+                    <span>能兑换&emsp;</span>
+                    <input type="text" readonly="true">
+                    <select>
+                        <option value="USD">美元</option>
+                        <option value="CNY">人民币</option>
+                        <option value="GBP">英镑</option>
+                        <option value="EUR">欧元</option>
+                    </select>
+                </div>
+                <div class="form-column" style="margin-bottom: 10px;">
+                    <span>当前汇率&emsp;</span>
+                    <input type="text" style="width: 134px" readonly="true">
+                    <span>选择银行&emsp;</span>
+                    <select style="width: 134px">
+                        <option value="USD">中国银行</option>
+                        <option value="CNY">工商银行</option>
+                        <option value="GBP">建设银行</option>
+                        <option value="EUR">农业银行</option>
+                        <option value="EUR">交通银行</option>
+                        <option value="EUR">招商银行</option>
+                    </select>
+                </div>
+                <div class="form-column" >
+                    <input class="form_submit" type="button" value="开始计算">
+                    <input class="form_reset" type="reset" value="结果重置">
+                </div>
+            </form>
+            <form id="mid_wb" style="display: none ">
+                <div class="form-column" style="margin-bottom: 10px;" >
+                    <span>我想换&emsp;</span>
+                    <input type="text" value="100">
+                    <select>
+                        <option value="USD">美元</option>
+                        <option value="CNY">人民币</option>
+                        <option value="GBP">英镑</option>
+                        <option value="EUR">欧元</option>
+                    </select>
+                    <span>需要用&emsp;</span>
+                    <input type="text" value="710.4700" readonly="true">
+                    <select>
+                        <option value="CNY">人民币</option>
+                        <option value="USD">美元</option>
+                        <option value="GBP">英镑</option>
+                        <option value="EUR">欧元</option>
+                    </select>
+                </div>
+                <div class="form-column" style="margin-bottom: 10px;" >
+                    <span>我持有&emsp;</span>
+                    <input type="text">
+                    <select>
+                        <option value="CNY">人民币</option>
+                        <option value="USD">美元</option>
+                        <option value="GBP">英镑</option>
+                        <option value="EUR">欧元</option>
+                    </select>
+                    <span>能兑换&emsp;</span>
+                    <input type="text" readonly="true">
+                    <select>
+                        <option value="USD">美元</option>
+                        <option value="CNY">人民币</option>
+                        <option value="GBP">英镑</option>
+                        <option value="EUR">欧元</option>
+                    </select>
+                </div>
+                <div class="form-column" style="margin-bottom: 10px;">
+                    <span>当前汇率&emsp;</span>
+                    <input type="text" style="width: 134px" readonly="true">
+                    <span>选择银行&emsp;</span>
+                    <select style="width: 134px">
+                        <option value="USD">中国银行</option>
+                        <option value="CNY">工商银行</option>
+                        <option value="GBP">建设银行</option>
+                        <option value="EUR">农业银行</option>
+                        <option value="EUR">交通银行</option>
+                        <option value="EUR">招商银行</option>
+                    </select>
+                </div>
+                <div class="form-column" >
+                    <input class="form_submit" type="button" value="开始计算">
+                    <input class="form_reset" type="reset" value="结果重置">
+                </div>
+            </form>
+
+            <div style="clear: both"></div>
+        </div>
+    </div>
+</div>
+<header>
+    <div class="toolbox">
+        <a href="../index.html">首页</a>
+        <a href="javascript:;" id="calculator">汇率计算器</a>
+        <a href="javascript:;">历史数据</a>
+        <a  id="myinfo" href="individual.html" target="_blank">个人中心</a>
+    </div>
+
+    <h1>Au99.99</h1>
+    <div class="showTime"></div>
+</header>
+<!--  主体盒子-->
+<section class="mainbox">
+    <div class="column ">
+        <div class="panel bar  ">
+            <h2>Au99.99近期成交量</h2><a  class="left-blowup" href="javascript:;">缩放</a>
+            <div class="chart"></div>
+            <div class="panel-footer"></div>
+        </div>
+        <div class="panel line ">
+            <h2>Au99.99买卖价(元/克)</h2><a  class="left-blowup" href="javascript:;">缩放</a>
+            <div class="chart">左侧图表二</div>
+            <div class="panel-footer"></div>
+        </div>
+        <div class="panel dash">
+            <h2>一周开盘价</h2><a  class="left-blowup" href="javascript:;">缩放</a>
+            <div class="chart">左侧图表三</div>
+            <div class="panel-footer"></div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="no">
+            <div class="no-hd">
+                <ul>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="no-bd">
+                <ul>
+                    <li>Au99.99当前价格(元/克)</li>
+                    <li>涨跌幅</li>
+                </ul>
+            </div>
+        </div>
+        <div class="map">
+            <!-- <div class="map1"></div>  map123用来做动画
+              <div class="map2"></div>
+              <div class="map3"></div>-->
+            <div class="mapchart">
+                <div class="showTalk" id="showTalk"></div>
+                <textarea class="sendMsg"  id="sendMsg" maxlength="500" placeholder="最多500字"></textarea>
+                <button type="button" id="sendMsgBtn" class="sendMsgBtn">发送消息</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="panel bar2" style="transform-origin: right top;">
+            <h2>品种成交热度</h2><a  class="right-blowup" href="javascript:;">缩放</a>
+            <div class="chart">右侧图表一</div>
+            <div class="panel-footer"></div>
+        </div>
+        <div class="panel line2" style="transform-origin: right top;">
+            <h2>价格走势</h2><a  class="right-blowup" href="javascript:;">缩放</a>
+            <div class="chart">右侧图表二</div>
+            <div class="panel-footer"></div>
+        </div>
+        <div class="panel radar" style="transform-origin: right top;">
+            <h2>购买建议</h2><a  class="right-blowup" href="javascript:;">缩放</a>
+            <div class="chart">右侧图表三</div>
+            <div class="panel-footer"></div>
+        </div>
+    </div>
+</section>
+
+</body>
+
+</html>

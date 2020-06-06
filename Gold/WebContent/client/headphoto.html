@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的头像</title>
+    <link rel="stylesheet" href="../assets/css/headphoto.css">
+    <script type="text/javascript" src="../assets/js/jquery-3.4.1.min.js"></script>
+    <script src="../assets/js/headphoto.js" defer></script>
+    <script src="../assets/js/classTool.js" defer></script>
+    
+</head>
+<body>
+    <div class="content-wrap">
+    <div class="content-left">
+        <span class="content-left-title">个人中心</span>
+        <ul>
+            <li><span class="content-left-name">首
+                    <b style="width:20px; display:inline-block"></b>
+                    页</span></li>
+            <li ><span class="content-left-name ">我的信息</span></li>
+            <li class="checked"><span class="content-left-name">我的头像</span></li>
+            <li><span class="content-left-name">修改密码</span></li>
+        </ul>
+    </div>
+
+    <div class="content-right">
+        <div class="content-right-title">
+            <span class="content-right-title-icon"></span>
+            <span class="content-right-title-text">我的头像</span>
+        </div>
+        <div class="container">
+            <div class="upload-box">
+                 <label for="file_input" class="first-change-lb" >
+                                 <i ></i> <span>选择图片</span>
+                             </label>
+                 <input  type="file" id="file_input" accept="image/png,image/jpg,image/jpeg">
+
+                <div class="img-preview">
+                    <div class="user-head-photo" >
+                        <img  style="width: 100%;height: 100%">
+                    </div>
+                    <div class="user-head-photo-info">当前头像</div>
+                </div>
+                <p class="descript">请选择图片上传：大小180 * 180像素支持JPG、PNG等格式，图片需小于2M</p>
+            </div>
+            <input id="update-btn" type="button" value="更新" class="btn-update disabled">
+        </div>
+    </div>
+</div>
+</body>
+</html>

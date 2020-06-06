@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #msg {
+            width: 800px;
+            height: 200px;
+            border:5px solid pink;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #msg p{
+            font-size: 20px;
+            text-align: center;
+        }
+        #msg a {
+            display: block;
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            (function () {
+                var i=4;
+                var countDown = document.getElementById("countDown");
+                var timer = setInterval(function () {
+                    countDown.innerText=i;
+                    i--
+                    if (i==0){
+                        clearInterval(timer);
+                        location.href="index.html";
+                    }
+                },1000);
+            })();
+
+            var backNow = document.getElementById("backNow");
+            backNow.onclick=function () {
+                location.href="index.html";
+            };
+        };
+
+
+    </script>
+</head>
+<body>
+    <div id="msg">
+        <p>登录以查看更多</p><p id="countDown">5</p>
+        <a id="backNow" href="javascript:;">立即返回</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>管理系统</title>
+	<link rel="stylesheet" href="../assets/css/adminMenu.css">
+    <!-- 引入font-awesome -->
+    <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css">
+	<script type="text/javascript" src="../assets/js/jquery-3.4.1.min.js"></script>
+	<script  src="../assets/js/adminMenu.js"></script> <!--自定义-->
+    <script  src="../assets/js/classTool.js"></script><!--自定义-->
+    <script  src="../assets/js/moveTool.js"></script><!--自定义-->
+    <script  src="../assets/js/getStyle.js"></script><!--自定义-->
+	<script  src="../assets/js/adminNewsControl.js" defer></script><!--自定义-->
+</head>
+<body>
+   
+	<!-- 顶部导航条 -->
+<div class="top-nav">
+<div class="top-nav-left">
+<a href="javascript:;"><i class="fa fa-cog fa-spin fa-fw"></i>管理系统</a>
+</div>
+
+<div class="top-nav-right">
+<a href="javascript:;"><i class="fa fa-envelope fa-fw" title="消息"></i><i class="fa fa-caret-down" title="更多"></i></a>
+
+<a href="javascript:;"><i class="fa fa-tasks fa-fw" title="任务"></i><i class="fa fa-caret-down" title="更多"></i></a>
+
+<a href="javascript:;"><i class="fa fa-bell fa-fw" title="提醒"></i><i class="fa fa-caret-down" title="更多"></i></a>
+
+<a href="javascript:;"><i class="fa fa-user fa-fw" title="用户"></i><i class="fa fa-caret-down" title="更多"></i></a>
+</div>
+
+</div>
+
+	<!-- 左边导航条 -->
+<div class="left-nav">
+
+<ul>
+	<li><a href="adminIndex.html"><i class="fa fa-dashboard fa-fw"></i>用户统计</a></li>
+	<li><a href="adminUser.html"><i class="fa fa-area-chart fa-fw"></i>用户管理</a></li>
+	<li><a href="javascript:;"><i class="fa fa-calculator fa-fw"></i>新闻统计</a></li>
+	<li><a href="javascript:;" class="current-left-nav" ><i class="fa fa-commenting fa-fw"></i>新闻管理</a></li>
+	<li><a href="adminGold.html"><i class="fa fa-tasks fa-fw"></i>黄金数据管理</a></li>
+	<li><a href="adminGold.html"><i class="fa fa-refresh fa-spin fa-fw"></i>数据库信息</a></li>
+</ul>
+</div>
+
+<a id="collapse-nav" title="隐藏/显示导航条">
+<img class="nav-img-open"  src="../assets/img/pack-up.png" alt="收起/打开导航条">
+</a>
+
+
+<!-- 内容区域 -->
+<div class="content">
+	<div id="imgDetail" class="disappear"><img ></div><!--弹窗-->
+	<div class="content-panel">
+		<div class="content-panel-title"><h1>热播图管理</h1>
+			<button id="outputBtn">导出</button><button id="deleteBtn">删除</button><button id="resetBtn">重置</button>
+			<h4 style="color: #ff633f;margin-left: 30px">注:轮播图最多可放10张</h4>
+		</div>
+		<div class="img-table">
+			<table border="1">
+				<thead>
+				<tr><th>全选</th><th>序号</th><th>新闻Id</th><th>缩略图</th><th>标题</th></tr>
+				</thead>
+				<tbody align="center">
+	<!--  			<tr><td><input class="checkbox" type="checkbox"></td><td>1</td><td>bbb</td><td><img src="../assets/img/imglist/pp0.jpeg"></td><td>ddd</td></tr>-->
+				</tbody>
+			</table>
+			<div class="upload-box">
+<!--				<label >-->
+<!--					<input  type="file">-->
+<!--					<i></i><span>选择图片</span>-->
+<!--				</label>-->
+
+			</div>
+			<div class="operate-panel">
+				<button id="uploadBtn">上传</button>
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+</body>
+<style>
+
+.content-panel {
+	background-color: #FFFFFF;
+	position: relative;
+}
+.content-panel .content-panel-title {
+	position: relative;
+	margin-bottom: 20px;
+}
+.content-panel .content-panel-title h1{
+	display: inline-block;
+}
+.content-panel .content-panel-title button {
+	display: inline-block;
+	width: 110px;
+	height: 30px;
+	border-radius: 20px;
+	margin-left: 50px;
+	background: rgb(0, 161, 214) !important;
+	outline: none;
+	color: #fff;
+}
+.img-table table{
+	background-color: #fff;
+	position: relative;
+	width: 100%;
+	border-color: #dddddd;
+	border-collapse: collapse;
+}
+.img-table table th {
+	font-size: 18px;
+}
+.img-table table th:hover {
+	cursor: pointer;
+}
+.img-table table th,td {
+	padding: 10px 0;
+}
+
+
+.checkbox:checked {
+	background:#1673ff
+}
+.checkbox {
+	outline: none;
+	width:25px;
+	height:25px;
+	background-color:#ffffff;
+	border:solid 1px #dddddd;
+	-webkit-border-radius:50%;
+	border-radius:50%;
+	font-size:0.8rem;
+	margin:0;
+	padding:0;
+	position:relative;
+	display:inline-block;
+	vertical-align:top;
+	cursor:default;
+	-webkit-appearance:none;
+	-webkit-user-select:none;
+	user-select:none;
+	-webkit-transition:background-color ease 0.1s;
+	transition:background-color ease 0.1s;
+}
+.checkbox:checked::after {
+	content:'';
+	top:5px;
+	left:5px;
+	position:absolute;
+	background:transparent;
+	border:#fff solid 2px;
+	border-top:none;
+	border-right:none;
+	height:6px;
+	width:10px;
+	-moz-transform:rotate(-45deg);
+	-ms-transform:rotate(-45deg);
+	-webkit-transform:rotate(-45deg);
+	transform:rotate(-45deg);
+}
+
+.operate-panel {
+	position: relative;
+	height: 60px;
+	width: 100%;
+}
+.operate-panel button {
+	color: #fff;
+	outline: none;
+	border-radius: 20px;
+	width: 110px;
+	height: 40px;
+	display: inline-block;
+	border: 1px solid #00a1d6;
+	background: #00a1d6!important;
+	cursor: pointer;
+	margin-top: 10px;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.img-table .upload-box {
+	position: relative;
+	width: 100%;
+	height: 300px;
+}
+.img-table .upload-box input {
+	display: none;
+}
+.img-table .upload-box label img {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.img-table .upload-box label {
+	margin-top: 20px;
+	cursor: pointer;
+	background: #f1f2f5;
+	width: 180px;
+	height: 180px;
+	/*position: absolute;*/
+	float: left;
+	margin-left: 20px;
+	border: 1px solid #e5e9ef;
+	border-radius: 4px;
+	transition: all .6s ease;
+	position: relative;
+}
+.upload-box label i {
+	margin: 52px auto 0;
+	width: 54px;
+	height: 46px;
+	display: block;
+	background: url(../assets/img/icons_m_2.57e5263.png);
+	background-position: -101px -1065px;
+	font-style: normal;
+}
+.upload-box label span {
+	display: block;
+	font-family: 'MicrosoftYaHei';
+	font-size: 16px;
+	color: #6d757a;
+	line-height: 20px;
+	margin-top: 10px;
+	letter-spacing: 0;
+	text-align: center;
+	padding-right: 28px;
+}
+
+.img-table tbody tr td:nth-child(1){
+	width: 80px;
+}
+.img-table tbody tr td:nth-child(2){
+	width: 150px;
+}
+.img-table tbody tr td:nth-child(3) {
+	width: 200px;
+
+}
+.img-table tbody tr td:nth-child(4) {
+	width: 180px;
+	height: 180px;
+	padding: 0;
+}
+.img-table tbody tr td:nth-child(4) img {
+	width: 100%;
+	height: 100%;
+	vertical-align: bottom;
+	display: block;
+	cursor: pointer;
+}
+.img-table tbody tr td:nth-child(4) img:hover {
+	opacity:0.7;
+}
+
+#imgDetail {/*弹窗*/
+	position:fixed;
+	z-index:1000;
+	padding-top:100px;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	overflow:auto;
+	background-color:rgb(0,0,0);
+	background-color:rgba(0,0,0,0.9);
+}
+#imgDetail img {
+	margin:auto;
+	display:block;
+	width:80%;
+	height: 80%;
+	max-width:700px;
+	cursor: pointer;
+}
+.disappear {/*弹窗消失*/
+	display: none;
+}
+
+
+</style>
+</html>

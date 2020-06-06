@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+    <link rel="stylesheet" href="../assets/css/individual.css">
+    <script src="../assets/js/individual.js" defer></script>
+  	<script type="text/javascript" src="../assets/js/jquery-3.4.1.min.js"></script>
+    
+
+</head>
+<body>
+    <div class="content-wrap">
+        <div class="content-left">
+            <span class="content-left-title">个人中心</span>
+            <ul>
+                <li><span class="content-left-name">首
+                    <b style="width:20px; display:inline-block"></b>
+                    页</span></li>
+                <li class="checked"><span class="content-left-name ">我的信息</span></li>
+                <li><span class="content-left-name">我的头像</span></li>
+                <li><span class="content-left-name">修改密码</span></li>
+            </ul>
+        </div>
+
+        <div class="content-right">
+            <div class="content-right-title">
+                <span class="content-right-title-icon"></span>
+                <span class="content-right-title-text">我的信息</span>
+            </div>
+            <div class="user-setting-wrap">
+                <div>
+                    <form>
+                        <div class="el-form-item  user-name">
+                            <label class="el-form-item__label">昵称:</label>
+                            <div class="el-form-item__content">
+                                <div class="el-input">
+                                    <input id="uname"  class="el-input__inner" autocomplete="off" placeholder="你的昵称" type="text" rows="2" maxlength="16" validateevent="true">
+                                </div>
+                                <span class="user-name-not">注：修改一次昵称需要消耗6点积分</span>
+                            </div>
+                        </div>
+                        <div class="el-form-item user-id">
+                            <label class="el-form-item__label">用户名:</label>
+                            <div class="el-form-item__content">
+                                <span id="userId" style="font-size: 16px;color: #898989;">--</span>
+                            </div>
+                        </div>
+                        <div class="el-form-item user-my-sign">
+                            <label class="el-form-item__label">我的签名:</label>
+                            <div class="el-form-item__content">
+                                <div class="el-textarea">
+                                    <textarea placeholder="设置您的签名" type="textarea" rows="2" autocomplete="off" validateevent="true" class="el-textarea__inner"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="el-form-item user-my-sex">
+                            <label class="el-form-item__label">性别:</label>
+                            <div class="el-form-item__content">
+                                <div class="el-radio-group">
+                                    <label class="el-radio-button">
+                                        <input type="radio" class="el-radio-button__orig-radio" value="男">
+                                        <span class="el-radio-button__inner">男</span></label>
+                                    <label class="el-radio-button ">
+                                        <input type="radio" class="el-radio-button__orig-radio" value="女">
+                                        <span class="el-radio-button__inner">女</span></label>
+                                    <label class="el-radio-button is-active">
+                                        <input type="radio" class="el-radio-button__orig-radio" value="保密">
+                                        <span class="el-radio-button__inner">保密</span></label></div>
+                            </div>
+                        </div>
+                        <div class="el-form-item user-my-btn">
+                            <div class="el-form-item__content">
+                                <div class="padding-dom"></div>
+                                <div class="user-my-btn-warp">
+                                    <button type="button" class="el-button el-button--primary">
+                                        <span>保存</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

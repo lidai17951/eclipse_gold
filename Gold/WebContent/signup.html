@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+    <script src="assets/js/signup.js" defer></script>
+     <script src="assets/js/jquery-3.4.1.min.js" defer></script>
+    
+
+
+</head>
+<body>
+<div class="container">
+    <!--注册页面-->
+    <div class="form-container sign-up-container">
+        <form action="#">
+            <h2>注册</h2>
+            <div class="social-container">
+                <a href="javascript:;" class="social"><i class="fa fa-qq"></i></a>
+                <a href="javascript:;" class="social"><i class="fa fa-weixin"></i></a>
+                <a href="javascript:;" class="social"><i class="fa fa-weibo"></i></a>
+            </div>
+            <input type="text" name="userId" id="signup-userId" placeholder="手机/邮箱">
+            <input type="text" name="uname" id="signup-uname" placeholder="昵称">
+            <input type="password" name="upwd" id="signup-upwd" placeholder="密码">
+            <button type="button" id="signup-btn" class="singUp">注册</button>
+        </form>
+    </div>
+
+    <!-- 登录页面-->
+    <div class="form-container sign-in-container">
+        <form >
+            <h2>登录</h2>
+            <div class="social-container">
+                <a href="javascript:;" class="social"><i class="fa fa-qq"></i></a>
+                <a href="javascript:;" class="social"><i class="fa fa-weixin"></i></a>
+                <a href="javascript:;" class="social"><i class="fa fa-weibo"></i></a>
+            </div>
+            <input type="text" name="userId" id="login-userid"  placeholder="手机/邮箱">
+            <input type="password" name="upwd" id="login-upwd" placeholder="密码">
+            <a href="javascript:;" class="forget">忘记密码</a>
+            <button type="button" id="loginbtn" class="singIn">登录</button>
+        </form>
+    </div>
+
+    <!--覆盖容器-->
+    <div class="overlay-container">
+        <div class="overlay">
+            <!--左边覆盖-->
+            <div class="overlay-panel overlay-left-container">
+                <h2>成为新用户</h2>
+                <p>登录以查看更多资讯</p>
+                <button id="sign-in">已有账号</button>
+            </div>
+            <!--右边覆盖-->
+            <div class="overlay-panel overlay-right-container">
+                <h2>欢迎回来</h2>
+                <p>注册新用户</p>
+                <button id="sign-up">注册新用户</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<style>
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f6f5f7;
+    }
+
+    h2 {
+        font-size: 30px;
+        text-transform: capitalize;
+    }
+
+    a {
+        display: inline-block;
+        text-decoration: none;
+        height: 20px;
+        color: #bbb;
+        font-size: 12px;
+        text-transform: capitalize;
+    }
+
+    a:hover {
+        color: lightslategrey;
+        border-bottom: 2px solid #ff4b2b;
+    }
+
+    button {
+        background: #ff4b2b;
+        padding: 10px 50px;
+        border: 1px solid transparent;
+        border-radius: 20px;
+        text-transform: uppercase;
+        color: white;
+        margin-top: 10px;
+        outline: none;
+        transition: transform 80ms;
+    }
+
+    button:active {
+        transform: scale(.95);
+    }
+
+    .container {
+        position: relative;
+        width: 768px;
+        height: 480px;
+        background-color: white;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .20);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .form-container {
+        position: absolute;
+        top: 0px;
+        width: 50%;
+        height: 100%;
+        background-color: white;
+        transition: all .60s ease-in-out;
+    }
+
+    .sign-up-container {
+        z-index: 1;
+    }
+
+    .sign-in-container {
+        z-index: 2;
+    }
+
+    .form-container form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        padding: 0 50px;
+    }
+
+    .form-container input {
+        width: 100%;
+        margin: 8px 0;
+        padding: 12px;
+        background-color: #eeeeee;
+        border: none;
+    }
+
+    .social-container {
+        margin: 10px 0;
+    }
+
+    .social-container a {
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        border: 1px solid #dddddd;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 40px;
+        color: #333333;
+        margin: 0 5px;
+    }
+
+    .social-container a:hover {
+        color: white;
+        background: #222f3e;
+        border-color: #cbcbcc;
+    }
+
+    .overlay-container {
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        top: 0px;
+        z-index: 100;
+        right: 0;
+        overflow: hidden;
+        transition: transform .60s ease-in-out;
+    }
+
+    .overlay {
+        position: absolute;
+        width: 200%;
+        height: 100%;
+        left: -100%;
+        background-color: #ff4b2b;
+        background-image: linear-gradient(to right, #ff4b2d, #ff426b);
+    }
+
+    .overlay-panel {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height: 100%;
+        color: white;
+        padding: 0 40px;
+        text-align: center;
+    }
+
+    .overlay-panel button {
+        background-color: transparent;
+        border: 1px solid white;
+    }
+
+    .overlay-panel p {
+        font-size: 12px;
+        margin: 10px 0 15px;
+    }
+
+    .overlay-right-container {
+        right: 0;
+        transform: translateX(0);
+        transition: transform .60s ease-in-out;
+    }
+    .overlay-left-container {
+        transform: translateX(10%);
+        transition: transform .60s ease-in-out;
+    }
+    .container.active .sign-up-container{
+        z-index: 5;
+        transform: translateX(100%);
+    }
+    .container.active .sign-in-container{
+        transform: translateX(100%);
+    }
+    .container.active .overlay-container{
+        transform: translateX(-100%);
+    }
+    .container.active .overlay {
+        transform: translateX(50%);
+    }
+    .container.active .overlay-left-container {
+        transform: translateX(0);
+    }
+    .container.active .overlay-right-container {
+        transform: translateX(-10%);
+    }
+</style>
+
+<script>
+    window.onload=function () {
+        const container =document.querySelectorAll('.container')[0];
+        const  signUp =document.getElementById("sign-up");
+        const signIn =document.getElementById("sign-in");
+        signUp.onclick=function () {
+            container.classList.add('active');
+        };
+        signIn.onclick=function () {
+            container.classList.remove('active');
+        };
+    };
+
+</script>
+</html>

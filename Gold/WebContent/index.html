@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+    <script src="assets/js/flexible.js"></script>
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/moveTool.js"></script>
+    <script src="assets/js/getStyle.js"></script>
+    <script src="assets/js/classTool.js"></script>
+   <script src="assets/js/index.js" defer></script>
+ 
+   
+
+</head>
+<body>
+<header>
+    <!--未登录的状态-->
+    <div style="visibility: visible" class="top_user">
+        <ul>
+            <li><a id="login_a" href="javascript:;">登录</a>
+            <div class="top_login top_login_c">
+                <form>
+                    <input id="uid" name="uid" type="text" placeholder="邮箱/手机号">
+                    <input id="upwd" name="upwd" type="password" placeholder="请输入密码"><br>
+                    <input type="button" value="登录" style="width: 50px"><input type="button" value="忘记密码" style="margin-left: 20px">
+                </form>
+            </div>
+            </li>
+            <li><a href="signup.html">注册</a></li>
+        </ul>
+
+        <div class="top_register"></div>
+    </div>
+
+	<!--登录后的状态-->
+    <div style="visibility: hidden" class="login_after">
+        <ul>
+            <li id="upower">---</li>
+            <li id="uname">---</li>
+            <li id="uPhoto"><a href="javascript:;">
+                <img ></a>
+               <div class="userinfo">
+
+                </div>
+            </li></ul>
+
+    </div> 
+
+</header>
+
+<div class="priceWrap">
+
+    <!--    Au99.99-->
+    <div id="au9999" class="price_bar">
+        <div class="price_name">
+            <h1>Au99.99</h1>
+            <h3>99.99%黄金</h3>
+        </div>
+        <div class="quoteWrap">
+            <div class="price" >
+                <h5 class="h5color_red ">--</h5><div class="updown redrow "></div>
+            </div>
+            <ul class="change">
+                <li class="li_red ">--</li>
+                <li>--</li>
+            </ul>
+        </div>
+        <div class="quote_detail_wrap">
+            <ul>
+                <li>今开：<span>--</span></li>
+                <li>昨收：<span>--</span></li>
+                <li>最低：<span>--</span></li>
+                <li>最高：<span>--</span></li>
+            </ul>
+            <a href="javascript:;">查看详尽分析</a>
+        </div>
+    </div>
+
+    <!--    Au99.95-->
+    <div id="au9995" class="price_bar">
+        <div class="price_name">
+            <h1>Au99.95</h1>
+            <h3>99.95%黄金</h3>
+        </div>
+        <div class="quoteWrap">
+            <div class="price" >
+                <h5 class="h5color_red">--</h5><div class="updown redrow"></div>
+            </div>
+            <ul class="change">
+                <li class="li_red">--</li>
+                <li>--</li>
+            </ul>
+        </div>
+        <div class="quote_detail_wrap">
+            <ul>
+                <li>今开：<span>--</span></li>
+                <li>昨收：<span>--</span></li>
+                <li>最低：<span>--</span></li>
+                <li>最高：<span>--</span></li>
+            </ul>
+            <a href="javascript:;">查看详尽分析</a>
+        </div>
+    </div>
+
+    <!--    Au100g-->
+    <div id="au100g" class="price_bar">
+        <div class="price_name">
+            <h1>Au100g</h1>
+            <h3>99.99%金条100g</h3>
+        </div>
+        <div class="quoteWrap">
+            <div class="price" >
+                <h5 class="h5color_red">--</h5><div class="updown redrow"></div>
+            </div>
+            <ul class="change">
+                <li class="li_green">--</li>
+                <li>--</li>
+            </ul>
+        </div>
+        <div class="quote_detail_wrap">
+            <ul>
+                <li>今开：<span>--</span></li>
+                <li>昨收：<span>--</span></li>
+                <li>最低：<span>--</span></li>
+                <li>最高：<span>--</span></li>
+            </ul>
+            <a href="javascript:;">查看详尽分析</a>
+        </div>
+    </div>
+
+    <!--   AuT+D-->
+    <div id="autd" class="price_bar">
+        <div class="price_name">
+            <h1>AuT+D</h1>
+            <h3>黄金(T+D)</h3>
+        </div>
+        <div class="quoteWrap">
+            <div class="price" >
+                <h5 class="h5color_red ">--</h5><div class="updown redrow"></div>
+            </div>
+            <ul class="change">
+                <li class="li_green">--</li>
+                <li>--</li>
+            </ul>
+        </div>
+        <div class="quote_detail_wrap">
+            <ul>
+                <li>今开：<span>--</span></li>
+                <li>昨收：<span>--</span></li>
+                <li>最低：<span>--</span></li>
+                <li>最高：<span>--</span></li>
+            </ul>
+            <a href="javascript:;">查看详尽分析</a>
+        </div>
+    </div>
+
+
+    <!--    铂金9995-->
+    <div id="pt9995" class="price_bar">
+        <div class="price_name">
+            <h1>Pt9995</h1>
+            <h3>铂金9995</h3>
+        </div>
+        <div class="quoteWrap">
+            <div class="price" >
+                <h5 class="h5color_red">--</h5><div class="updown redrow"></div>
+            </div>
+            <ul class="change">
+                <li class="li_green">--</li>
+                <li>--</li>
+            </ul>
+        </div>
+        <div class="quote_detail_wrap">
+            <ul>
+                <li>今开：<span>--</span></li>
+                <li>昨收：<span>--</span></li>
+                <li>最低：<span>--</span></li>
+                <li>最高：<span>--</span></li>
+            </ul>
+            <a href="javascript:;">查看详尽分析</a>
+        </div>
+    </div>
+
+</div>
+
+<!--顶部新闻 加 轮播图-->
+<div class="top_news">
+
+<div id="slideshow" class="slideshow">
+    <ul id="imglist">
+  <!-- <li><a href="javascript:;"><img src="/golddisk/newsImgList/nbWUnlGuv580.jpg"></a></li>
+    <li><a href="javascript:;"><img src="/golddisk/newsImgList/PmBlzN5Yn2pp0.jpeg"></a></li>
+    <li><a href="javascript:;"><img src="/golddisk/newsImgList/ppklG7Utj65b.jpg"></a></li>
+    <li><a href="javascript:;"><img src="/golddisk/newsImgList/prMcWHNDb2a3.jpg"></a></li>
+    <li><a href="javascript:;"><img src="/golddisk/newsImgList/nbWUnlGuv580.jpg"></a></li>  --> 
+    </ul>
+    <div class="bt_lt"><img src="assets/img/imglist/bt_lt.png" ></div>
+    <div class="bt_rt"><img src="assets/img/imglist/bt_rt.png" ></div>
+</div>
+
+<!--轮播图旁边的新闻 -->
+    <div class="top_news_lt">
+        <div class="top_news_up">
+            <h2><a href="javascript:;"> 两万亿美元救市在路上！黄金冲高1670受阻见顶？</a></h2>
+        <ul>
+            <li><a href="javascript:;">无限量化宽松恐导致美元过剩？伦敦金成“香饽饽”多头王者回归冲击</a></li>
+            <li><a href="javascript:;">75年之最!美国经济萎缩程度不断探底!黄金TD涨超3%至373</a></li>
+            <li><a href="javascript:;"> 首款新冠DNA候选疫苗进入临床试验!黄金期货回落?还有大涨空间!</a></li>
+        </ul>
+        </div>
+
+        <div class="top_news_down">
+            <h2><a href="javascript:;"> 美指为何坚挺100关口？黄金大涨须拿下1700</a></h2>
+        <ul>
+            <li><a href="javascript:;">1万亿美元!疫情致经济衰退，IMF着急救市?赞中国复苏令人鼓舞!</a></li>
+            <li><a href="javascript:;">特朗普将再发万亿美元!美股大涨 黑暗成过去?抛售尚未结束!</a></li>
+            <li><a href="javascript:;">  数十亿美元!为遏制疫情，比尔盖茨大手笔!同时研发七种新冠疫苗?</a></li>
+        </ul>
+        </div>
+    </div>
+
+
+</div>
+
+<div id="moreNews">
+    <ul>
+        <li>
+            <div class="news_list_pic">
+                <a href="javascript:;"><img src="assets/img/imglist/pic_test.jpeg" ></a>
+                <a href="javascript:;"><h2>美国失业率将创大萧条后新高 白银期货涨势有望进一步扩大!</h2></a>
+            </div>
+            <div class="news_list_word">
+                <p>经济学家日前预测，美国失业率将会达到大萧条之后的最高水平，而且，即使经济活动开始恢复，美国的经济复苏也将是漫长的过程。财政刺激措施以及央行宽松环境将会为贵金属提供长久支撑，白银期货后市仍被看好。
+                </p>
+            </div>
+        </li>
+        <li>
+            <div class="news_list_pic">
+                <a href="javascript:;"><img src="assets/img/imglist/pic_test.jpeg" ></a>
+                <a href="javascript:;"><h2>美国失业率将创大萧条后新高 白银期货涨势有望进一步扩大!</h2></a>
+            </div>
+            <div class="news_list_word">
+                <p>经济学家日前预测，美国失业率将会达到大萧条之后的最高水平，而且，即使经济活动开始恢复，美国的经济复苏也将是漫长的过程。财政刺激措施以及央行宽松环境将会为贵金属提供长久支撑，白银期货后市仍被看好。
+                </p>
+            </div>
+        </li>
+        <li>
+            <div class="news_list_pic">
+                <a href="javascript:;"><img src="assets/img/imglist/pic_test.jpeg" ></a>
+                <a href="javascript:;"><h2>美国失业率将创大萧条后新高 白银期货涨势有望进一步扩大!</h2></a>
+            </div>
+            <div class="news_list_word">
+                <p>经济学家日前预测，美国失业率将会达到大萧条之后的最高水平，而且，即使经济活动开始恢复，美国的经济复苏也将是漫长的过程。财政刺激措施以及央行宽松环境将会为贵金属提供长久支撑，白银期货后市仍被看好。
+                </p>
+            </div>
+        </li>
+    </ul>
+    <button id="showMoreBtn">下拉显示更多新闻</button>
+</div>
+
+</body>
+<script>
+    window.onload=function(){
+    	initIndex();  //进来先初始化一次
+        var timer=setInterval(function () {
+            clearInterval(timer);
+            initIndex();
+        },1000*60*2); //2分钟更新一次
+    };
+    
+
+
+</script>
+
+
+</html>
