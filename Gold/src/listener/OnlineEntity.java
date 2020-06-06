@@ -1,5 +1,7 @@
 package listener;
 
+/* 测试github
+ * */
 public class OnlineEntity {
 	private int onlineNum=0; // 在线总人数
 	private int onlineLogin=0; // 在线注册用户
