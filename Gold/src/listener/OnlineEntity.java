@@ -1,12 +1,13 @@
 package listener;
 
 /**
- * µÚ3´ÎÌá½»GitHub
+ * åœ¨GitHubä¸Šçš„ä¸€æ¬¡ä¿®æ”¹
+   
  * */
 public class OnlineEntity {
-	private int onlineNum=0; // ÔÚÏß×ÜÈËÊý
-	private int onlineLogin=0; // ÔÚÏß×¢²áÓÃ»§
-	private int onlineTourist=0;// ÔÚÏßÓÎ¿Í
+	private int onlineNum=0; // åœ¨çº¿æ€»äººæ•°
+	private int onlineLogin=0; // åœ¨çº¿æ³¨å†Œç”¨æˆ·
+	private int onlineTourist=0;// åœ¨çº¿æ¸¸å®¢
 
 	
 	public OnlineEntity() {
@@ -31,7 +32,7 @@ public class OnlineEntity {
 	}
 	
 	public int getOnlineTourist() {
-		//ÔÚÏß×ÜÈËÊý ¼õ ÔÚÏß×¢²áÈËÊý = ÔÚÏßÓÎ¿Í
+		//åœ¨çº¿æ€»äººæ•° å‡ åœ¨çº¿æ³¨å†Œäººæ•° = åœ¨çº¿æ¸¸å®¢
 		return this.onlineNum-this.onlineLogin;
 	}
 
@@ -39,18 +40,18 @@ public class OnlineEntity {
 //		this.onlineTourist = onlineTourist;
 //	}
 
-	public void addOnlineNum() {//Ôö¼ÓÔÚÏß×ÜÈËÊý
+	public void addOnlineNum() {//å¢žåŠ åœ¨çº¿æ€»äººæ•°
 		++this.onlineNum;
 	}
-	public void addOnlineLogin() {//Ôö¼ÓÔÚÏß×¢²áÈËÊý
+	public void addOnlineLogin() {//å¢žåŠ åœ¨çº¿æ³¨å†Œäººæ•°
 		++this.onlineLogin;
 	}
-	public void reduceOnlineNum() {//¼õÉÙÔÚÏß×ÜÈËÊý
+	public void reduceOnlineNum() {//å‡å°‘åœ¨çº¿æ€»äººæ•°
 		if (this.onlineNum>0) {
 			--this.onlineNum;
 		}
 	}
-	public void reduceOnlineLogin() {//¼õÉÙÔÚÏß×¢²áÈËÊý
+	public void reduceOnlineLogin() {//å‡å°‘åœ¨çº¿æ³¨å†Œäººæ•°
 		if (this.onlineLogin>0) {
 			--this.onlineLogin;
 		}
