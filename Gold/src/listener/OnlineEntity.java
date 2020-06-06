@@ -1,7 +1,7 @@
 package listener;
 
 /**
- * 第3次提交GitHub
+ * Eclipse上的修改
  * */
 public class OnlineEntity {
 	private int onlineNum=0; // 在线总人数
