@@ -1,6 +1,7 @@
 package listener;
 
-/* 测试github
+/**
+ * 第二次提交GitHub
  * */
 public class OnlineEntity {
 	private int onlineNum=0; // 在线总人数
